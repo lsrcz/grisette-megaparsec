@@ -3,10 +3,10 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# OPTIONS_GHC -Wno-orphans #-}
 
-module Pizza.Lib.Text.Megaparsec where
+module Grisette.Lib.Text.Megaparsec where
 
 import Control.Monad.Trans
-import Pizza.Core
+import Grisette.Core
 import Text.Megaparsec
 import Text.Megaparsec.Internal
 

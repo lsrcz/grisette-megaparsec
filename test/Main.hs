@@ -1,6 +1,6 @@
 module Main where
 
-import Pizza.Lib.Text.MegaparsecTests
+import Grisette.Lib.Text.MegaparsecTests
 import Test.Tasty
 import Test.Tasty.Ingredients
 import qualified Test.Tasty.Ingredients.ConsoleReporter as ConsoleReporter
@@ -12,8 +12,8 @@ main = defaultMainWithIngredients [composeReporters Reporter.ingredient ConsoleR
 tests :: TestTree
 tests =
   testGroup
-    "pizza-megaparsec"
+    "grisette-megaparsec"
     [ testGroup
-        "Pizza.Lib.Text"
+        "Grisette.Lib.Text"
         [megaparsecTests]
     ]

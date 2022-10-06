@@ -4,13 +4,13 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           pizza-megaparsec
+name:           grisette-megaparsec
 version:        0.1.0.0
-synopsis:       Support for megaparsec package with Pizza
-description:    Orphan instances and wrappers for megaparsec package with Pizza
+synopsis:       Support for megaparsec package with Grisette
+description:    Orphan instances and wrappers for megaparsec package with Grisette
 category:       Formal Methods, Theorem Provers, Symbolic Computation, SMT
-homepage:       https://github.com/lsrcz/pizza-haskell#readme
-bug-reports:    https://github.com/lsrcz/pizza-haskell/issues
+homepage:       https://github.com/lsrcz/grisette-haskell#readme
+bug-reports:    https://github.com/lsrcz/grisette-haskell/issues
 author:         Sirui Lu
 maintainer:     Sirui Lu (siruilu@cs.washington.edu)
 copyright:      2021-2022 Sirui Lu
@@ -20,7 +20,7 @@ build-type:     Simple
 
 source-repository head
   type: git
-  location: https://github.com/lsrcz/pizza-haskell
+  location: https://github.com/lsrcz/grisette-haskell
 
 flag fast
   description: Compile with O2 optimization
@@ -29,17 +29,17 @@ flag fast
 
 library
   exposed-modules:
-      Pizza.Lib.Text.Megaparsec
+      Grisette.Lib.Text.Megaparsec
   other-modules:
-      Paths_pizza_megaparsec
+      Paths_grisette_megaparsec
   hs-source-dirs:
       src
   ghc-options: -Wall -ferror-spans
   build-depends:
       base >4.14 && <5
+    , grisette-core ==0.1.0.0
     , megaparsec >=8
     , mtl >=2.2.2
-    , pizza-core ==0.1.0.0
     , transformers >=0.5.6.2
   if flag(fast)
     ghc-options: -O2
@@ -51,17 +51,17 @@ test-suite spec
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
-      Pizza.Lib.Text.MegaparsecTests
-      Paths_pizza_megaparsec
+      Grisette.Lib.Text.MegaparsecTests
+      Paths_grisette_megaparsec
   hs-source-dirs:
       test
   ghc-options: -Wall -ferror-spans
   build-depends:
       base >4.14 && <5
+    , grisette-core
+    , grisette-megaparsec
     , megaparsec >=8
     , mtl >=2.2.2
-    , pizza-core
-    , pizza-megaparsec
     , tasty >=1.1.0.3
     , tasty-hunit >=0.10
     , tasty-quickcheck >=0.10.1

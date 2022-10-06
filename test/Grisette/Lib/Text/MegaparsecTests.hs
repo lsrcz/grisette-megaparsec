@@ -1,15 +1,15 @@
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Pizza.Lib.Text.MegaparsecTests where
+module Grisette.Lib.Text.MegaparsecTests where
 
-import Pizza.Core.Control.Monad.UnionMBase
-import Pizza.Core.Data.Class.Bool
-import Pizza.Core.Data.Class.GenSym
-import Pizza.Core.Data.Class.Mergeable
-import Pizza.Core.Data.Class.SimpleMergeable
-import Pizza.Lib.Text.Megaparsec ()
-import Pizza.TestUtils.SBool
+import Grisette.Core.Control.Monad.UnionMBase
+import Grisette.Core.Data.Class.Bool
+import Grisette.Core.Data.Class.GenSym
+import Grisette.Core.Data.Class.Mergeable
+import Grisette.Core.Data.Class.SimpleMergeable
+import Grisette.Lib.Text.Megaparsec ()
+import Grisette.TestUtils.SBool
 import Test.Tasty
 import Test.Tasty.HUnit
 import Text.Megaparsec hiding (single)
