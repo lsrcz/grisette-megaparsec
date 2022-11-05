@@ -40,8 +40,8 @@ megaparsecTests =
                   ab <- p "ab"
                   a <- p "a"
                   return $ ab ||~ a
-            let r = mrgIte (SSBool "a") p1 p2 :: Parser SBool
-            let r1 = mrgIte1 (SSBool "a") p1 p2 :: Parser SBool
+            let r = gmrgIte (SSBool "a") p1 p2 :: Parser SBool
+            let r1 = gmrgIte1 (SSBool "a") p1 p2 :: Parser SBool
             let ru1 = mrgIf (SSBool "a") p1 p2 :: Parser SBool
             runParserT r "x" "aba"
               @=? unionIf
@@ -59,7 +59,7 @@ megaparsecTests =
                 (single (Right (And (SSBool "a") (SSBool "ba"))))
                 (single (Right (Or (SSBool "ab") (SSBool "a")))),
           testCase "Mergeable" $ do
-            let SimpleStrategy s = mergingStrategy :: MergingStrategy SBool (Parser SBool)
+            let SimpleStrategy s = gmergingStrategy :: GMergingStrategy SBool (Parser SBool)
             let p1 = do
                   a <- p "a"
                   ba <- p "ba"
